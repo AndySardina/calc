@@ -1,0 +1,11 @@
+Package: linear
+Type: Package
+Title: An standard linear regression model
+Version: 0.1.0
+Author: Andi Sardina
+Maintainer: The package maintainer <andysardina22@gmail.com>
+Description: This is a project to learn how create R packages. 
+ The code used was extracted from https://cran.r-project.org/doc/contrib/Leisch-CreatingPackages.pdf.
+License: GPL 
+Encoding: UTF-8
+LazyData: true
