@@ -21,6 +21,8 @@ linmodEst <- function(x, y){
   )
 }
 
+linmod <- function(x, ...) UseMethod("linmod")
+
 linmod.default <- function(x, y, ...){
   x <- as.matrix(x)
   y <- as.numeric(y)
@@ -34,3 +36,12 @@ linmod.default <- function(x, y, ...){
   class(est) <- "linmod"
   est
 }
+
+print.linmod <- function(x, ...)
+{
+  cat("Call:\n")
+  print(x$call)
+  cat("\nCoefficients:\n")
+  print(x$coefficients)
+}
+
