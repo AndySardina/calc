@@ -7,7 +7,8 @@ linmodEst <- function(x, y){
   coef <- solve.qr(qx, y)
 
   ## degrees of freedom and standard deviation of residuals
-  df <- nrow(x)-ncol(x)sigma2 <- sum((y - x%*%coef)^2)/df
+  df <- nrow(x)-ncol(x)
+  sigma2 <- sum((y - x%*%coef)^2)/df
 
   ## compute sigma^2 * (x’x)^-1
   vcov <- sigma2 * chol2inv(qx$qr)
@@ -16,8 +17,9 @@ linmodEst <- function(x, y){
   list(coefficients = coef,
        vcov = vcov,
        sigma = sqrt(sigma2),
-       df = df)
-  }
+       df = df
+  )
+}
 
 linmod.default <- function(x, y, ...){
   x <- as.matrix(x)
